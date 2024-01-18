@@ -16,6 +16,24 @@ view: orders {
     type: string
     sql: ${TABLE}.status ;;
   }
+
+  dimension: status_check1 {
+    label: "status_of_the_customer"
+    description: "status_info"
+    type: string
+    sql: ${TABLE}.status ;;
+    html:
+    {% if value == 'complete' %}
+    🟡
+
+    {% elsif value == 'cancelled' %}
+    🔴
+    {% else %}
+    🟣
+    {% endif %};;
+  }
+
+
   dimension: user_id {
     type: number
     # hidden: yes
@@ -29,18 +47,18 @@ view: orders {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	users.id,
-	users.first_name,
-	users.last_name,
-	billion_orders.count,
-	fakeorders.count,
-	hundred_million_orders.count,
-	hundred_million_orders_wide.count,
-	order_items.count,
-	order_items_vijaya.count,
-	ten_million_orders.count
-	]
+  id,
+  users.id,
+  users.first_name,
+  users.last_name,
+  billion_orders.count,
+  fakeorders.count,
+  hundred_million_orders.count,
+  hundred_million_orders_wide.count,
+  order_items.count,
+  order_items_vijaya.count,
+  ten_million_orders.count
+  ]
   }
 
 }
