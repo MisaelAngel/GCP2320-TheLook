@@ -23,10 +23,10 @@ view: orders {
     type: string
     sql: ${TABLE}.status ;;
     html:
-    {% if value == 'complete' %}
+    {% if value == 'COMPLETED' %}
     🟡
 
-    {% elsif value == 'cancelled' %}
+    {% elsif value == 'CANCELLED' %}
     🔴
     {% else %}
     🟣
