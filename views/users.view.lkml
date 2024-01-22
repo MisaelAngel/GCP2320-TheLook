@@ -25,6 +25,14 @@ view: users {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
+  # measure: max_year {
+  #   type: string
+  #   sql: max(${created_year}) ;;
+  # }
+  # dimension: year {
+  #   type: string
+  #   sql: ${max_year} ;;
+  # }
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
@@ -48,6 +56,11 @@ view: users {
   dimension: zip {
     type: zipcode
     sql: ${TABLE}.zip ;;
+  }
+
+  dimension: last_two_years {
+    type: yesno
+    sql:  ;;
   }
 
   parameter: test {
