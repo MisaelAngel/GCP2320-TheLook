@@ -25,6 +25,12 @@ view: users {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
+
+  dimension: month {
+    type: date_month
+
+    sql: ${TABLE}.created_at ;;
+  }
   # measure: max_year {
   #   type: string
   #   sql: max(${created_year}) ;;
