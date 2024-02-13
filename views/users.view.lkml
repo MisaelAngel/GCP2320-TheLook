@@ -2,6 +2,7 @@ view: users {
   sql_table_name: demo_db.users ;;
   drill_fields: [id]
 # Comment
+# comment_2
   dimension: id {
     primary_key: yes
     type: number
