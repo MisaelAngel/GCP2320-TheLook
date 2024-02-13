@@ -3,6 +3,7 @@ view: users {
   drill_fields: [id]
 # Comment
 # comment_2
+# comment_3
   dimension: id {
     primary_key: yes
     type: number
